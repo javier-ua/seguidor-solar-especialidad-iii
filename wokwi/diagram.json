@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Equipo E11 - Especialidad III",
+  "editor": "wokwi",
+  "parts": [
+    {"type": "wokwi-arduino-uno", "id": "uno", "top": 40, "left": -40, "attrs": {}, "rotate": 180},
+    {"type": "wokwi-breadboard-half", "id": "bb1", "top": 0, "left": 330, "attrs": {}},
+    {"type": "wokwi-photoresistor-sensor", "id": "ldrSI", "top": -142, "left": 310, "attrs": {"lux": "500"}, "rotate": 90},
+    {"type": "wokwi-photoresistor-sensor", "id": "ldrSD", "top": -142, "left": 400, "attrs": {"lux": "500"}, "rotate": 90},
+    {"type": "wokwi-photoresistor-sensor", "id": "ldrII", "top": -142, "left": 490, "attrs": {"lux": "500"}, "rotate": 90},
+    {"type": "wokwi-photoresistor-sensor", "id": "ldrID", "top": -142, "left": 580, "attrs": {"lux": "500"}, "rotate": 90},
+    {"type": "wokwi-servo", "id": "servoAz", "top": 240, "left": 345, "attrs": {}},
+    {"type": "wokwi-servo", "id": "servoEl", "top": 240, "left": 545, "attrs": {}}
+  ],
+  "connections": [
+    ["uno:5V", "bb1:tp.1", "red", []],
+    ["uno:GND.2", "bb1:tn.1", "black", []],
+    ["bb1:tp.25", "bb1:bp.25", "red", []],
+    ["bb1:tn.24", "bb1:bn.24", "black", []],
+    ["ldrSI:VCC", "bb1:tp.3", "red", []],
+    ["ldrSI:GND", "bb1:tn.3", "black", []],
+    ["ldrSI:AO", "uno:A0", "orange", []],
+    ["ldrSD:VCC", "bb1:tp.8", "red", []],
+    ["ldrSD:GND", "bb1:tn.8", "black", []],
+    ["ldrSD:AO", "uno:A1", "gold", []],
+    ["ldrII:VCC", "bb1:tp.13", "red", []],
+    ["ldrII:GND", "bb1:tn.13", "black", []],
+    ["ldrII:AO", "uno:A2", "green", []],
+    ["ldrID:VCC", "bb1:tp.18", "red", []],
+    ["ldrID:GND", "bb1:tn.18", "black", []],
+    ["ldrID:AO", "uno:A3", "blue", []],
+    ["servoAz:V+", "bb1:bp.2", "red", []],
+    ["servoAz:GND", "bb1:bn.3", "black", []],
+    ["servoAz:PWM", "uno:9", "purple", []],
+    ["servoEl:V+", "bb1:bp.16", "red", []],
+    ["servoEl:GND", "bb1:bn.17", "black", []],
+    ["servoEl:PWM", "uno:10", "violet", []]
+  ],
+  "dependencies": {}
+}
